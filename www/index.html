@@ -17,28 +17,21 @@
 <body>
     <div class="app">
         <h1>29 Seconds</h1>
-        <div id="deviceready" class="blink"> </div>
         <div class="dropdown-teams">
             <p>Aantal teams</p>
             <select name="teams" id="teams" onchange="admSelectCheck(this);">
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option id="admOption" value="0">Admin</option>
+                <option value="2" id="tweeteams">2</option>
+                <option value="3" id="drieteams">3</option>
+                <option value="4" id="vierteams">4</option>
+                <option value="5" id="vijfteams">5</option>
+                <option value="6" id="zesteams">6</option>
             </select>
         </div>
-        <br />
-        <br />
-        <br />
-        <br />
-        <div id="admDivCheck" style="display:none;">
-            <select>
-                <option value="2teams">2 teams</option>
-                <option value="3teams">3 teams</option>
-            </select>
-        </div>
+        <div id="tweeteams" style="display:none;">2</div>
+        <div id="drieteams" style="display:none;">3</div>
+        <div id="vierteams" style="display:none;">4</div>
+        <div id="vijfteams" style="display:none;">5</div>
+        <div id="zesteams" style="display:none;">6</div>
         
         <div class="startbutton">
             <button>Start spel</button>
