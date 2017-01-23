@@ -34,5 +34,5 @@ const games = {
         }, {
             color: orange, score: 0
         }
-     ]
+    , ]
 };
