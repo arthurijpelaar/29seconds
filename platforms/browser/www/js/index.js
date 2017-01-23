@@ -19,20 +19,20 @@ var app = {
 };
 
 const games = {
-    currentteam: 1;
+    currentteam: 1,
     teams: [
         {
-            color: red; score: 0;
+            color: red, score: 0
         }, {
-            color: blue; score: 0;
+            color: blue, score: 0
         }, {
-            color: green; score: 0;
+            color: green, score: 0
         }, {
-            color: yellow; score: 0;
+            color: yellow, score: 0
         }, {
-            color: purple; score: 0;
+            color: purple, score: 0
         }, {
-            color: orange; score: 0;
+            color: orange, score: 0
         }
-    , ]
+     ]
 };

@@ -10,7 +10,16 @@ function admSelectCheck(nameSelect)
             document.getElementById("admDivCheck").style.display = "block";
         }
         else{
-            document.getElementById("admDivCheck").style.display = "none";
+            document.getElementById("tweeteams").style.display = "block";
+        }
+        else{
+            document.getElementById("drieteams").style.display = "block";
+        }
+        else{
+            document.getElementById("vierteams").style.display = "block";
+        }
+        else{
+            document.getElementById("vijfteams").style.display = "block";
         }
     }
     else{
