@@ -4,6 +4,8 @@
 
 document.getElementById("next").addEventListener("click",function(){
 
+    document.getElementById("next").style.display = "none";
+
     var count=36 ;
 
     var counter=setInterval(timer, 1000); //1000 will  run it every 1 second
@@ -11,13 +13,16 @@ document.getElementById("next").addEventListener("click",function(){
 
     function timer() {
         count=count-1;
+
         if (count < 0)
         {
+            if (count<=0){document.getElementById("next").style.display = "block";}
             clearInterval(counter);
             return;
         }
 
         document.getElementById("timer").innerHTML=count + " seconds remaining"; // watch for spelling
+
     }
 
 },false);
@@ -42,3 +47,4 @@ document.getElementById("next").addEventListener("click",function(){
     }
 
 },false);
+
