@@ -18,7 +18,7 @@ var app = {
     }
 };
 
-const games {
+const games = {
     currentteam: 1;
     teams: [
         {
@@ -35,4 +35,4 @@ const games {
             color: orange; score: 0;
         }
     , ]
-}
+};

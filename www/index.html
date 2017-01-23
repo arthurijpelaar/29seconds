@@ -2,6 +2,9 @@
 <html>
 
 <head>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/startscherm.js"></script>
     <meta charset="utf-8" />
     <meta name="format-detection" content="telephone=no" />
     <meta name="msapplication-tap-highlight" content="no" />
@@ -17,12 +20,23 @@
         <div id="deviceready" class="blink"> </div>
         <div class="dropdown-teams">
             <p>Aantal teams</p>
-            <select name="teams" id="teams">
+            <select name="teams" id="teams" onchange="admSelectCheck(this);">
                 <option value="2">2</option>
                 <option value="3">3</option>
                 <option value="4">4</option>
                 <option value="5">5</option>
                 <option value="6">6</option>
+                <option id="admOption" value="0">Admin</option>
+            </select>
+        </div>
+        <br />
+        <br />
+        <br />
+        <br />
+        <div id="admDivCheck" style="display:none;">
+            <select>
+                <option value="2teams">2 teams</option>
+                <option value="3teams">3 teams</option>
             </select>
         </div>
         
@@ -30,8 +44,7 @@
             <button>Start spel</button>
         </div>
     </div>
-    <script type="text/javascript" src="cordova.js"></script>
-    <script type="text/javascript" src="js/index.js"></script>
+
     <script type="text/javascript">
         app.initialize();
     </script>
