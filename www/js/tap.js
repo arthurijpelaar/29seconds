@@ -25,7 +25,7 @@ document.getElementById("next").addEventListener("click",function(){
         document.getElementById("timer").innerHTML = "<span class='counter'>" + count + "</span> seconds remaining"; // watch for spelling
 
         if (count<=30){document.body.style.backgroundColor = "#BDFCBB";}
-        if (count<=15){document.body.style.backgroundColor = "#FCF2BB";}
+        if (count<=15){document.body.style.backgroundColor = "#FAD7AA";}
         if (count<=5){document.body.style.backgroundColor = "#FCBBBB";}
     }
 
