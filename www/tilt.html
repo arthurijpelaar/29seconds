@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html class=''>
+<head>
+	<meta name="viewport" content="width=device-width">
+	<link href='http://fonts.googleapis.com/css?family=Press+Start+2P' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	<style>
+		body {
+	    	background-color: gray; /* gray */
+		}
+	
+		.value {
+		  margin-bottom: 30px;
+		}
+	</style>
+</head>
+<body>
+	<div id="demo">
+	    <div class="value">Y: <span id="y">N/A</span></div>
+	</div>
+	<p id="haha"></p>
+	<script src='//production-assets.codepen.io/assets/common/stopExecutionOnTimeout-58d22c749295bca52f487966e382a94a495ac103faca9206cbd160bdf8aedf2a.js'></script><script src='//cdnjs.cloudflare.com/ajax/libs/zepto/1.1.4/zepto.min.js'></script>
+	<script>
+		
+		
+		
+	var update = function (id, value) {
+	    // rond de value af naar rond getalletje
+        value = Math.floor(value);
+		// zoekt juiste id op
+        id = '#' + id;
+        // echo naar scherm
+        $(id).html(value);
+	        
+		if (value >= -50 && value <= -40) {
+			var myElement = document.getElementById("demo");
+			myElement.style.backgroundColor = "red";
+	    } else if (value >= 40 && value <= 50) {
+		    var myElement1 = document.getElementById("demo");
+			myElement1.style.backgroundColor = "green";
+	    } else {
+		    var myElement2 = document.getElementById("demo");
+			myElement2.style.backgroundColor = "gray";
+	    }
+	};
+	
+	// document.write($Yvalue);
+	if (window.DeviceOrientationEvent) {
+	    window.addEventListener('deviceorientation', function (e) {
+	        $('#frame').text((e.absolute ? 'Earth' : 'arbitrary') + ' coordinates frame');
+	        update('y', e.gamma);
+	        });
+	}
+	</script>
+</body>
+</html>
