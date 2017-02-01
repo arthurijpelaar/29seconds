@@ -1,7 +1,6 @@
 // $(document.body).on("tap",function(){
 //     document.getElementById("demo").innerHTML = Math.random();
 // });
-addEventListener()
 document.getElementById("next").addEventListener("click",function(){
 
     document.getElementById("next").style.display = "none";
@@ -34,6 +33,8 @@ document.getElementById("next").addEventListener("click",function(){
 
 document.getElementById("next").addEventListener("click",function(){
 
+    ee.emitEvent('stopTilt');
+
     document.getElementById("timer").style.display = "block";
 
     var count=6 ;
@@ -46,6 +47,7 @@ document.getElementById("next").addEventListener("click",function(){
         if (count < 0)
         {
             clearInterval(counter);
+            ee.emitEvent('startTilt');
             return;
         }
 
