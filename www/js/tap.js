@@ -6,7 +6,7 @@ document.getElementById("next").addEventListener("click",function(){
     document.getElementById("next").style.display = "none";
 
 
-    var count=36 ;
+    var count=16 ;
 
     var counter=setInterval(timer, 1000); //1000 will  run it every 1 second
 
@@ -18,6 +18,7 @@ document.getElementById("next").addEventListener("click",function(){
         {
             if (count<=0){document.getElementById("next").style.display = "inline";}
             clearInterval(counter);
+            ee.emitEvent('stopTilt');
             return;
         }
         if (count<=0){document.getElementById("timer").style.display = "none";}
@@ -31,9 +32,9 @@ document.getElementById("next").addEventListener("click",function(){
 
 },false);
 
-document.getElementById("next").addEventListener("click",function(){
 
-    ee.emitEvent('stopTilt');
+
+document.getElementById("next").addEventListener("click",function(){
 
     document.getElementById("timer").style.display = "block";
 
@@ -58,3 +59,30 @@ document.getElementById("next").addEventListener("click",function(){
 
 },false);
 
+ee.addListener('startTilt', function () {
+    var update = function (id, value) {
+        value = Math.floor(value);
+        id = '#' + id;
+        $(id).html(value);
+
+        if (value >= -50 && value <= -40) {
+            var myElement = document.getElementById("body");
+            myElement.style.backgroundColor = "red";
+        } else if (value >= 40 && value <= 50) {
+            var myElement1 = document.getElementById("body");
+            myElement1.style.backgroundColor = "green";
+        }
+    };
+
+    // document.write($Yvalue);
+    if (window.DeviceOrientationEvent) {
+        window.addEventListener('deviceorientation', function (e) {
+            $('#frame').text((e.absolute ? 'Earth' : 'arbitrary') + ' coordinates frame');
+            update('y', e.gamma);
+        });
+    }
+});
+
+ee.addListener('stopTilt', function () {
+    window.removeEventListener('deviceorientation');
+});
