@@ -1,7 +1,7 @@
 // $(document.body).on("tap",function(){
 //     document.getElementById("demo").innerHTML = Math.random();
 // });
-
+addEventListener()
 document.getElementById("next").addEventListener("click",function(){
 
     document.getElementById("next").style.display = "none";
