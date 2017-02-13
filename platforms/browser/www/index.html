@@ -3,44 +3,39 @@
 
 <head>
     <script type="text/javascript" src="cordova.js"></script>
-    <script type="text/javascript" src="js/index.js"></script>
-    <script type="text/javascript" src="js/startscherm.js"></script>
     <meta charset="utf-8" />
     <meta name="format-detection" content="telephone=no" />
     <meta name="msapplication-tap-highlight" content="no" />
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
     <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
     <link rel="stylesheet" type="text/css" href="css/index.css" />
-    <title>Hello World</title>
+    <title>29 seconds</title>
 </head>
 
 <body>
-    <div class="app">
+    <div id="startpage" data-role="startpage">
         <h1>29 Seconds</h1>
-        <div class="dropdown-teams">
-            <p>Aantal teams</p>
-            <select name="teams" id="teams" onchange="admSelectCheck(this);">
-                <option value="2" id="tweeteams">2</option>
-                <option value="3" id="drieteams">3</option>
-                <option value="4" id="vierteams">4</option>
-                <option value="5" id="vijfteams">5</option>
-                <option value="6" id="zesteams">6</option>
-            </select>
-        </div>
-        <div id="tweeteams" style="display:none;">2</div>
-        <div id="drieteams" style="display:none;">3</div>
-        <div id="vierteams" style="display:none;">4</div>
-        <div id="vijfteams" style="display:none;">5</div>
-        <div id="zesteams" style="display:none;">6</div>
-        
-        <div class="startbutton">
-            <button>Start spel</button>
-        </div>
+        <label for="teams">Aantal teams</label><select id="teams"></select>
+        <button id="next">Start / Next team</button>
     </div>
 
+    <div id="gamepage" data-role="gamepage">
+        <div id="verb" style="font-size: 3em;"></div>
+    </div>
+
+    <div id="timer">TIMER</div>
+    <div id="score">SCORE</div>
+    <div id="tilt">TILT</div><div id="frame">FRAME</div>
+
+
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/EventEmitter.js"></script>
     <script type="text/javascript">
         app.initialize();
     </script>
 </body>
-
 </html>
